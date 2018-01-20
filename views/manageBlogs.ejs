@@ -1,0 +1,67 @@
+<html>
+<head>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+</head>
+ <body>
+ <div class="container">
+ <h3>Blogs & Notes Managements</h3>
+ </br></br>
+  <form class="form-inline" method="post" action="../search">
+    <div class="form-group">
+      <label class="sr-only" for="id">Blog ID:</label>
+      <input type="text" class="form-control" id="id" placeholder="Enter blog ID"  name="id">
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+  </br></br>
+  <%  if (typeof id != 'undefined') {  
+	if(! status){%>
+  <div class="alert alert-danger col-sm-3"> <strong> Error! </strong> <%= msg %> </div>
+  <% } else { %>
+  
+  
+  
+  <table class="table">
+  <tr>
+  <th>Blogger</th>
+  <th>Title</th>
+  <th>Notes</th>
+  </tr>
+  <tr>
+  <td><%= blogger %> </td>
+  <td><%= title %> </td>
+  <td><table>
+		
+		  <% notes.forEach(function(note){ %>
+			<tr>
+			 <td>
+				<%= note.title %>
+			 </td>
+			 <td>
+				<a href="/delete/<%= note.id %>">
+					<span class="glyphicon glyphicon-trash"></span>
+				</a>
+			  </td>
+			</tr>
+		  <% })%>
+		
+		</table>
+	</td>
+  
+  </tr>
+  
+  </table>
+  <%  if (typeof deleteNote != 'undefined') { %>
+			<div class="alert alert-success col-sm-3"> <strong>Success! </strong> <%= deleteNote %>  </div>
+  <% }}} %>
+  
+</div>
+
+  
+  
+ 
+  
+ </body>
+</html>
