@@ -19,7 +19,7 @@ This project aims to manage blogs and notes
 7/ Run the server:
   $ node index.js
   
-8/ Open your favorite browser and enter: http://localhost/search
+8/ Open your favorite browser and enter: http://localhost
 
 
 
