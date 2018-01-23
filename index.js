@@ -46,7 +46,7 @@ server.listen(80);
 
 
  
-server.get('/search', function(request, response) {
+server.get('/', function(request, response) {
  
    response.render('manageBlogs');
 });
