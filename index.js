@@ -1,3 +1,9 @@
+var express = require('express');
+var bodyParser = require("body-parser");
+
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var req = new XMLHttpRequest();
+
 function getBlog(url, callback) {
     var req = new XMLHttpRequest();
     req.open("GET", url);
@@ -32,11 +38,7 @@ function deleteNote(url, callback) {
     req.send(null);
 }
 
-var express = require('express');
-var bodyParser = require("body-parser");
 
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-var req = new XMLHttpRequest();
   
 // serveur html
 var server= express();
